@@ -22,7 +22,14 @@ class Programm {
         float num22 = 3.45f;
         float dDiv2 = num12 / num22;
         Console.WriteLine( dDiv2 );
-        
+
+        string str = "Aston";
+        str = String.Empty;
+        int strNum = String.GetHashCode(str);
+        str = "MayBe".ToLower();
+        Console.WriteLine( strNum );
+        Console.WriteLine( str );
+        //Finish lesson 20 
         Console.ReadLine();
     }
 }
