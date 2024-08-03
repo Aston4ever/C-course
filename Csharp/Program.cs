@@ -9,6 +9,40 @@ class Programm { //Class and methods Names PascalNaming
     const string DB = "09.05.1989";
     
     static void Main( string[] args ) {
+     
+               
+     /*try {
+     int a = 5;
+     int b = 0;
+     int result =  a / b;
+     } catch ( DivideByZeroException e ) {
+      WriteLine(e.Message);
+     }*/
+     /*
+      WriteLine("Please enter a number: ");
+     string numStr = ReadLine();
+
+     try {
+      int num = int.Parse( numStr );
+     } catch ( ArgumentNullException ) {
+      WriteLine( "NUll was entered" );
+     } finally {
+      WriteLine("That was called anyway");
+     }
+     */
+
+     /*
+      Write("Input num1: ");
+     string input1 = ReadLine();
+     Write("Input num2: ");
+     string input2 = ReadLine();
+
+     int x = int.Parse( input1 );
+     int y = int.Parse( input2 );
+
+     WriteLine($"The sum of {x} and {y} is {x + y}");
+     ReadKey();
+     */
      /*
       int result = AddMethod(3,5);
      WriteLine(result);
