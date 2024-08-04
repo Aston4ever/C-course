@@ -3,21 +3,42 @@ using static System.Console;
 
 namespace Csharp;
 
-class Programm { //Class and methods Names PascalNaming
+class Programm 
+{ //Class and methods Names PascalNaming
     const double PI = 3.14159;
     const int weeks = 52, months = 12;
     const string DB = "09.05.1989";
     
-    static void Main( string[] args ) {
+    static void Main( string[] args ) 
+    { 
+     WriteLine("What's the temperature like now?");
+     string? tempInput = ReadLine();
+     int tempTryParse;
+     if ( int.TryParse(tempInput, out tempTryParse) ) {
+      
+     } else {
+      tempTryParse = 0;
+     }
+     if ( tempTryParse < 20 ) {
+       WriteLine("Take the coat");
+     }else if ( tempTryParse == 20 ) {
+       WriteLine("What a good weather");
+     } else if ( tempTryParse > 20 ) {
+       WriteLine("So hot!");
+     } else {
+       WriteLine("What?");
+     }
      
-               
+     
      /*try {
+      
      int a = 5;
      int b = 0;
      int result =  a / b;
      } catch ( DivideByZeroException e ) {
       WriteLine(e.Message);
      }*/
+     
      /*
       WriteLine("Please enter a number: ");
      string numStr = ReadLine();
@@ -30,7 +51,6 @@ class Programm { //Class and methods Names PascalNaming
       WriteLine("That was called anyway");
      }
      */
-
      /*
       Write("Input num1: ");
      string input1 = ReadLine();
