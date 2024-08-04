@@ -10,11 +10,23 @@ class Programm
     const string DB = "09.05.1989";
     
     static void Main( string[] args ) {
-     int temperature = 150;
+     Write("Enter temperature: ");
+     string tempStr = ReadLine();
+
+     if ( int.TryParse( tempStr, out int temp ) ) {
+      string resul = temp <= 15 ? "it is too cold here" : temp > 28 ? "it is hot here" : "it is ok";
+      WriteLine(resul);
+     } else {
+      WriteLine("Not a valid Temperature");
+     }
+     
+     /*
+      int temperature = 150;
      string stateofMatter = String.Empty;
 
      stateofMatter = temperature < 0 ? "solid" : temperature > 100 ? "gas" : "liquid";
      WriteLine(stateofMatter);
+     */
      /*
       string? ageInput = ReadLine();
      int age = int.Parse(ageInput);
@@ -194,6 +206,7 @@ class Programm
      ReadKey();
      */
     }
+
     
     /*
      static int AddMethod(int x, int y) {
