@@ -11,11 +11,29 @@ class Programm
     
     static void Main( string[] args ) 
     { 
-     WriteLine("What's the temperature like now?");
+     WriteLine("Regestring a user");
+     Write("Type in your name: ");
+     string userName = ReadLine();
+     Write("Type in your passoword: ");
+     string userPassword = ReadLine();
+     
+     WriteLine("Logiing in...");
+     WriteLine("Enter your userName");
+     string userLogingName = ReadLine();
+     WriteLine("Enter your userPassword");
+     string userLogingPassword = ReadLine();
+
+     if ( userName.Equals(userLogingName) && userPassword.Equals(userLogingPassword) ) {
+       WriteLine("You are logged in...");
+     } else {
+      WriteLine("You have entered incorrect userName or password");
+     }
+     /*
+      WriteLine("What's the temperature like now?");
      string? tempInput = ReadLine();
      int tempTryParse;
      if ( int.TryParse(tempInput, out tempTryParse) ) {
-      
+
      } else {
       tempTryParse = 0;
      }
@@ -28,17 +46,14 @@ class Programm
      } else {
        WriteLine("What?");
      }
-     
-     
+     */
      /*try {
-      
      int a = 5;
      int b = 0;
      int result =  a / b;
      } catch ( DivideByZeroException e ) {
       WriteLine(e.Message);
      }*/
-     
      /*
       WriteLine("Please enter a number: ");
      string numStr = ReadLine();
@@ -164,7 +179,10 @@ class Programm
      ReadKey();
      */
     }
-    
+
+    static void RegistringUSer() {
+     
+    }
     /*
      static int AddMethod(int x, int y) {
      return x + y;
