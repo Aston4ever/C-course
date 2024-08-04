@@ -9,14 +9,28 @@ class Programm
     const int weeks = 52, months = 12;
     const string DB = "09.05.1989";
     
-    static void Main( string[] args ) 
-    { 
-     WriteLine("Regestring a user");
+    static void Main( string[] args ) {
+     int temperature = 150;
+     string stateofMatter = String.Empty;
+
+     stateofMatter = temperature < 0 ? "solid" : temperature > 100 ? "gas" : "liquid";
+     WriteLine(stateofMatter);
+     /*
+      string? ageInput = ReadLine();
+     int age = int.Parse(ageInput);
+     switch ( age ) {
+      case age:
+       WriteLine("Too young to go to club!");
+       break;
+     }
+     */
+     /*
+      WriteLine("Regestring a user");
      Write("Type in your name: ");
      string userName = ReadLine();
      Write("Type in your passoword: ");
      string userPassword = ReadLine();
-     
+
      WriteLine("Logiing in...");
      WriteLine("Enter your userName");
      string userLogingName = ReadLine();
@@ -28,6 +42,7 @@ class Programm
      } else {
       WriteLine("You have entered incorrect userName or password");
      }
+     */
      /*
       WriteLine("What's the temperature like now?");
      string? tempInput = ReadLine();
@@ -179,10 +194,7 @@ class Programm
      ReadKey();
      */
     }
-
-    static void RegistringUSer() {
-     
-    }
+    
     /*
      static int AddMethod(int x, int y) {
      return x + y;
