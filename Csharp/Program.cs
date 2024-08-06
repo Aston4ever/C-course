@@ -10,7 +10,31 @@ class Programm
     const string DB = "09.05.1989";
     
     static void Main( string[] args ) {
-     Write("Enter temperature: ");
+     WriteLine("Hello, this is a calculate average programm!");
+     WriteLine("--------------------------------------------");
+     int scoreSum = 0;
+     string input = String.Empty;
+     do {
+      Write("Enter student's score: ");
+      input = ReadLine();
+      if ( input == "-1" ) {
+       break;
+      }
+      bool isParced = int.TryParse( input, out int grade );
+
+      if ( isParced && grade >=0 && grade <=20 ) {
+       scoreSum += grade;
+      } else {
+       WriteLine("Enter correct value...");
+      }
+
+     } while ( input != "-1");
+     WriteLine($"The total score is {scoreSum}");
+     /*for ( int i = 0; i < 10; i++ ) {
+      WriteLine($"i = {i}");
+     }*/
+     /*
+      Write("Enter temperature: ");
      string tempStr = ReadLine();
 
      if ( int.TryParse( tempStr, out int temp ) ) {
@@ -19,7 +43,7 @@ class Programm
      } else {
       WriteLine("Not a valid Temperature");
      }
-     
+     */
      /*
       int temperature = 150;
      string stateofMatter = String.Empty;
@@ -206,7 +230,6 @@ class Programm
      ReadKey();
      */
     }
-
     
     /*
      static int AddMethod(int x, int y) {
