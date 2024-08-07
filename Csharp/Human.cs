@@ -2,9 +2,9 @@
 
 public class Human {
     
-    private string firstName;
-    private string lastName;
-    private string eyeColor;
+    private string? firstName;
+    private string? lastName;
+    private string? eyeColor;
     private int age;
 
     public Human() {
