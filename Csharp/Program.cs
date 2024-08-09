@@ -14,11 +14,11 @@ class Programm
 
         string[] friendsNames = new string[5];
 
-        for ( int i = 0; i < friendsNames.Length; i++ ) {
-            Write("Enter your friend's name: ");
-            string? name = Console.ReadLine();
-            friendsNames[i] = name;
-        }
+        // for ( int i = 0; i < friendsNames.Length; i++ ) {
+        //     Write("Enter your friend's name: ");
+        //     string? name = Console.ReadLine();
+        //     friendsNames[i] = name;
+        // }
 
         foreach ( var name in friendsNames ) {
             Console.WriteLine( "My friend {0}", name );
@@ -32,6 +32,28 @@ class Programm
         WriteLine(mArr[2,2]);
         int dimensions = mArr.Rank;
         Console.WriteLine( dimensions );
+
+        foreach ( var item in mArr ) {
+            WriteLine($" Item {item}");
+        }
+
+        for ( int i = 0; i < mArr.GetLength(0); i++ ) {
+            for ( int j = 0; j < mArr.GetLength(1); j++ ) {
+                if ( mArr[i,j] % 2 == 0 ) {
+                    Write( mArr[i, j] + " " );
+                }
+            }
+        }
+        Console.WriteLine( " " );
+        for ( int i = 0; i < mArr.GetLength(0); i++ ) {
+            for ( int j =  mArr.GetLength(1); j == 0; j-- ) {
+                if ( i == j ) {
+                    Write( mArr[i, j] + " " );
+                }
+            }
+        }
+        
+        //Lesson 89 finished
      /*
      //create an object
      Human aston = new Human("Aston", "Star", "brown", 12);
