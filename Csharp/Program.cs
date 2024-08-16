@@ -6,6 +6,20 @@ namespace Csharp;
 class Programm 
 { //Class and methods Names PascalNaming
     static void Main( string[] args ) {
+        int[][] jaggedArr = new int[2][];
+        jaggedArr[0] = new int[3];
+        jaggedArr[1] = new int[2];
+
+        int[] arrOfHappiness = [5, 3, 4, 3, 5];
+        ArrIncreaser(arrOfHappiness);
+        int counter = 0;
+
+        foreach ( var element in arrOfHappiness ) {
+            counter++;
+            Console.WriteLine( $"elemet {counter} = {element}" );
+        }
+        
+        
         int[] grades = new int[5];
         grades[2] = 5;
         int[] gradesMath = [];
@@ -53,7 +67,7 @@ class Programm
             }
         }
         
-        //Lesson 89 finished
+        
      /*
      //create an object
      Human aston = new Human("Aston", "Star", "brown", 12);
@@ -75,5 +89,11 @@ class Programm
      box.DisplayInfo();
      */
      ReadKey();
+    }
+
+    static void ArrIncreaser( int[] defArr ) {
+        for ( int i = 0; i < defArr.Length; i++ ) {
+            defArr[i] += 2;
+        }
     }
 }
