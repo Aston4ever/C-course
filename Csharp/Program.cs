@@ -1,5 +1,5 @@
 ﻿using System.Collections;
-using
+using System.Collections.Generic;
 using System.Drawing;
 using static System.Console;
 
@@ -28,7 +28,47 @@ class Programm
             counter++;
             Console.WriteLine( $"elemet {counter} = {element}" );
         }
-        
+        //HASHTABLES
+        Hashtable studentsTable = new Hashtable();
+        Student stud1 = new Student( 1, "Aston", 98 );
+        Student stud2 = new Student( 2, "Kolya", 78 );
+        Student stud3 = new Student( 3, "Masha", 45 );
+        //хранение данных в хэш таблице
+        studentsTable.Add(stud1.Id, stud1);
+        studentsTable.Add(stud2.Id, stud2);
+        studentsTable.Add(stud3.Id, stud3);
+        //Как извлечь инфо из хэштаблицы c известным ID
+        Student storeStudent1 = (Student)studentsTable[stud1.Id]; // необходимо сделать каст до класса студент, что бы записать данные из хэш таблицы, так как в ней Value - Object
+        // Извлечение всех данных из Хэш таблицы    
+        foreach ( DictionaryEntry entry in studentsTable ) {    //entry - key\Value
+            Student temp = (Student)entry.Value; //entry.Value - Value. Тоесть сам объект, который находится под этим индексом
+            Console.WriteLine( temp.Id ); //А теперь когда мы превратили объект в класс студент то можем через точку получить его значения
+            Console.WriteLine( temp.studentName );
+            Console.WriteLine( temp.GPA );
+        }
+        //Сокращенная запись, сразу получаем класс студент (из пары кей вэлью берем сразу Вэльюс)
+        foreach ( Student student in studentsTable.Values ) { 
+            
+        }
+
+        Hashtable studentsHashtable = new Hashtable();
+        Student[] students = new Student[5];
+        students[0] = new Student( 1, "Martha", 99 );
+        students[1] = new Student( 1, "Pery", 98 );
+        students[2] = new Student( 11, "Cox", 56 );
+        students[3] = new Student( 11, "Gill", 77 );
+        students[4] = new Student( 23, "Tim", 38 );
+
+        foreach ( Student student in students ) {
+            if ( !studentsHashtable.ContainsKey( student.Id ) ) {
+                WriteLine("It's working");
+                studentsHashtable.Add(student.Id, student);
+            }
+        }
+
+        foreach ( Student student in studentsHashtable.Values ) {
+            WriteLine( $"Student's ID is {student.Id}, name is {student.studentName}, GPA is {student.GPA}" );
+        }
         
         
         ParamMethod("Hello", "234", "Hello", "Hello", "dfg", "Hello", "beegg", "beep", "342" );
@@ -127,5 +167,17 @@ class Programm
             }
         }
         return min;
+    }
+}
+
+public class Student {
+    public int Id { get; set; }
+    public string? studentName { get; set; }
+    public float GPA { get; set; }
+
+    public Student(int Id, string studentName, float GPA) {
+        this.Id = Id;
+        this.studentName = studentName;
+        this.GPA = GPA;
     }
 }
