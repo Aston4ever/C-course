@@ -1,0 +1,15 @@
+D:\!Projects\csharpCourse\Csharp\bin\Debug\net8.0\Csharp.exe
+D:\!Projects\csharpCourse\Csharp\bin\Debug\net8.0\Csharp.deps.json
+D:\!Projects\csharpCourse\Csharp\bin\Debug\net8.0\Csharp.runtimeconfig.json
+D:\!Projects\csharpCourse\Csharp\bin\Debug\net8.0\Csharp.dll
+D:\!Projects\csharpCourse\Csharp\bin\Debug\net8.0\Csharp.pdb
+D:\!Projects\csharpCourse\Csharp\obj\Debug\net8.0\Csharp.GeneratedMSBuildEditorConfig.editorconfig
+D:\!Projects\csharpCourse\Csharp\obj\Debug\net8.0\Csharp.AssemblyInfoInputs.cache
+D:\!Projects\csharpCourse\Csharp\obj\Debug\net8.0\Csharp.AssemblyInfo.cs
+D:\!Projects\csharpCourse\Csharp\obj\Debug\net8.0\Csharp.csproj.CoreCompileInputs.cache
+D:\!Projects\csharpCourse\Csharp\obj\Debug\net8.0\Csharp.sourcelink.json
+D:\!Projects\csharpCourse\Csharp\obj\Debug\net8.0\Csharp.dll
+D:\!Projects\csharpCourse\Csharp\obj\Debug\net8.0\refint\Csharp.dll
+D:\!Projects\csharpCourse\Csharp\obj\Debug\net8.0\Csharp.pdb
+D:\!Projects\csharpCourse\Csharp\obj\Debug\net8.0\Csharp.genruntimeconfig.cache
+D:\!Projects\csharpCourse\Csharp\obj\Debug\net8.0\ref\Csharp.dll

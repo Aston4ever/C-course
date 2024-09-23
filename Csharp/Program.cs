@@ -28,13 +28,13 @@ class Programm
             counter++;
             Console.WriteLine( $"elemet {counter} = {element}" );
         }
-        //HASHTABLES
+        //HASHTABLES---------------------------------------------------------------------------------------------
         Hashtable studentsTable = new Hashtable();
         Student stud1 = new Student( 1, "Aston", 98 );
         Student stud2 = new Student( 2, "Kolya", 78 );
         Student stud3 = new Student( 3, "Masha", 45 );
         //хранение данных в хэш таблице
-        studentsTable.Add(stud1.Id, stud1);
+        studentsTable.Add(stud1.Id, stud1); //Обязательно передать 2 значения
         studentsTable.Add(stud2.Id, stud2);
         studentsTable.Add(stud3.Id, stud3);
         //Как извлечь инфо из хэштаблицы c известным ID
@@ -70,6 +70,57 @@ class Programm
             WriteLine( $"Student's ID is {student.Id}, name is {student.studentName}, GPA is {student.GPA}" );
         }
         
+        //DICTIONARIES-----------------------------------------------------------------------------------------------
+        //Dictionary<int, string> myDictionary = new Dictionary<int, string>(){{1, "Hello"}, {2, "my"}, {2, "string"}};
+        Employee[] employees = new Employee[5] {
+            new Employee("CEO", "Gwyn", 35, 200),
+            new Employee("Manager", "Alex", 31, 190),
+            new Employee("HR", "Luter", 25, 100),
+            new Employee("Disigner", "Nick", 26, 250),
+            new Employee("Junior", "Gill", 29, 90),
+        };
+        Dictionary<string, Employee> employeeDIrectory = new Dictionary<string, Employee>();
+
+        foreach ( Employee emp in employees ) {
+            employeeDIrectory.Add(emp.Role, emp); //2 параметра, 1- роль это ключ, 2 - вэлью, сам работник
+        }
+        string key = "CEO";
+        if ( employeeDIrectory.ContainsKey(key) ) { // или можно использовать TryGetValue (key, out value
+            Employee emp1 = employeeDIrectory[key];
+            //вызывая каждое поле объекта получаем инфу
+        } else {
+            Console.WriteLine( $"There is no such key{key}" );
+        }
+
+        for ( int i = 0; i < employeeDIrectory.Count; i++ ) {
+            KeyValuePair<string, Employee> keyValuePair = employeeDIrectory.ElementAt( i );
+            Console.WriteLine( keyValuePair.Key );
+        }
+
+        string keyToRemove = "Junior";
+
+        if ( employeeDIrectory.Remove(keyToRemove) ) { //возвращает тру если удалил, фалс если не удалил, амо удаление тоже происходит
+            Console.WriteLine( $"Employee {keyToRemove} was deleted" );
+        } else {
+            Console.WriteLine( "no employee with such position was found" );
+        }
+        
+        //STACK-------------------------------------------------------------------------------------------------------
+        Stack<int> intStack = new Stack<int>();
+        intStack.Push(1);
+        Console.WriteLine( $"The top of the stack is {intStack.Peek()}" ); // посмотреть верхнее число
+        intStack.Push(1337);
+        Console.WriteLine( $"The top of the stack is {intStack.Peek()}" );
+        int myPopedNum = intStack.Pop();
+        
+        //QUEUE--------------------------------------------------------------------------------------------------------
+        Queue<int> intQueue = new Queue<int>();
+        intQueue.Enqueue(2);
+        intQueue.Enqueue(20);
+        Console.WriteLine( $"the front of the queue is {intQueue.Peek()}" );
+        intQueue.Dequeue(); // просто удаляет
+        int dequeuedItem = intQueue.Dequeue(); // удаляет первое в очереди значение и записывает в переменную
+        intQueue.Enqueue(20);
         
         ParamMethod("Hello", "234", "Hello", "Hello", "dfg", "Hello", "beegg", "beep", "342" );
         
@@ -179,5 +230,25 @@ public class Student {
         this.Id = Id;
         this.studentName = studentName;
         this.GPA = GPA;
+    }
+}
+
+public class Employee {
+    public string Role { get; set; }
+    public string Name { get; set; }
+    public int Age { get; set; }
+    public float Rate { get; set; }
+
+    public float Salary {
+        get {
+            return Rate * 8 * 5 * 4 * 12;
+        }
+    }
+
+    public Employee(string Role, string Name, int Age, int Rate) {
+        this.Role = Role;
+        this.Name = Name;
+        this.Age = Age;
+        this.Rate = Rate;
     }
 }
